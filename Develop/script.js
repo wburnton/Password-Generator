@@ -23,15 +23,13 @@ function generatePassword() {
 // if password is correct length, it will start the rest
   else { 
     window.alert("Your password length will be " + passwordLength);
-    
+    // adding prompt to add numbers
     var hasNumbers=window.confirm ("Do you want numbers in your password?"); 
     if (hasNumbers === true) { 
       alert("Password will have numbers") 
+      // adding numbers to our main character set 
       allCharset = allCharset.concat(numberCharset);
     } 
-    
-    
-  
     var hasUppercase=window.confirm ("Do you want uppercase letters in your password?"); 
     if (hasUppercase === true) { 
       alert("Password will have uppercase letters")
@@ -52,18 +50,24 @@ function generatePassword() {
       alert("Password will have special characters"); 
       allCharset = allCharset.concat(specCharset);
     }; 
-
+    // making sure at least one character is selected 
+    console.log(allCharset);
+    if (hasLowercase === false && hasUppercase === false && hasNumbers === false && hasSpecialcharacters === false) {
+      return "Please select at least one character type.";
+    };
+    // creating random characterset based on prompts 
     for (var i = 0; i < passwordLength; i++) { 
-    var randomChar = Math.floor(Math.random() * allCharset.length)
-  
-
+    var randomChar = [Math.floor(Math.random() * allCharset.length)]
+    }
+    console.log(randomChar); 
+    // adding random and all characters together 
     result += allCharset[randomChar]; 
     console.log(result)
     return result; 
 
-  }; }; 
+  }; };
 
-  }
+
   
   
   
@@ -81,15 +85,7 @@ function writePassword() {
   
 }  
 
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password"); 
-
-
-  passwordText.value = password;
-
   
-}  
 
 generateBtn.addEventListener("click", writePassword); 
 
