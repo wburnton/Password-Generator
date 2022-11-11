@@ -10,11 +10,12 @@ var uppercaseCharset = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
 var numberCharset = ["1","2","3","4","5","6","7","8","9","0"]; 
 var specCharset = ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","\",","^","_","`","{","|","}","~",]; 
 // leaving one variable open to add other arrays into once prompted  
-var allCharset = [""]
+var allCharset = [""]; 
+var result = ("");
 
 
 function generatePassword() { 
-  var result = (""); 
+  
 // intializing the password length 
   var passwordLength = window.prompt("Enter your password length");
 // making sure input is between 8 and 128 
@@ -57,11 +58,14 @@ function generatePassword() {
     };
     // creating random characterset based on prompts 
     for (var i = 0; i < passwordLength; i++) { 
-    var randomChar = [Math.floor(Math.random() * allCharset.length)]
+      var randomChar = [Math.floor(Math.random() * allCharset.length)]
+      result += allCharset[randomChar]; 
+       console.log(randomChar);
+       
     }
     console.log(randomChar); 
     // adding random and all characters together 
-    result += allCharset[randomChar]; 
+     
     console.log(result)
     return result; 
 
