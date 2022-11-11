@@ -16,7 +16,7 @@ This proved to be quite a challenge. Building the Javascript code up could be qu
 Use the generate button, then follow the prompts and input the length as they appear. The new password will appear in the bar below
 
     
-![alt text](assets/screenshot.png)
+![alt text](Assets/images/screenshot.png) 
     
 
 
